@@ -32,7 +32,12 @@ SESSION_CONFIGS = [
     },
 ]
 
-DEBUG = True
+if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
+    DEBUG = False
+else:
+    DEBUG = True
+
+
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
 LANGUAGE_CODE = 'en'
