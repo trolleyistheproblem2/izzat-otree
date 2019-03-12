@@ -1,0 +1,89 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    <h1> Contribution Round {{ player.round_number}} </h1>
+{% endblock %}
+
+{% block content %}
+
+<img src="/static/izzat_t3/header_1.png" position: absolute;
+	top:0px;
+	left:195px; width="950" height="103">
+
+<h2> You are <span class="text-danger"> Player {{player.id_in_group}} </span> </h2>
+
+    <style>
+h1 {
+    color: black;
+    font-size: 200%;
+	padding-left: 0px;
+	position: absolute;
+	top:20px;
+	left:400px}
+h2{
+    color: black;
+    font-size: 150%;
+	padding-left: 0px;}
+
+
+</style>
+
+
+    <style>
+    .otree-body {
+    width:1000px;
+
+	padding: 0 0 0 0px;
+	color: black;
+		}
+
+    #bg-cont{
+      background: url("/static/izzat_t3/contribute1.png") no-repeat center top;
+  	background-size: contain;
+      position: relative;
+      height: 540px;
+    }
+
+	.form-group {
+	position: relative;
+    top: 0px;
+	left: 100px;
+	}
+
+	.otree-btn-next{
+
+	position: relative;
+    top: 0px;
+	left: 100px
+    }
+
+	#recap{
+	background: url("/static/izzat_t3/footer.png") no-repeat center bottom;
+	background-size: contain;
+      position: relative;
+	  bottom: 0px;
+      height: 500px;	}
+
+
+
+
+</style>
+
+
+
+
+<div id="bg-cont">
+
+</div>
+
+{% formfield player.contribution with label="Enter your contribution in the box below." %}
+
+{% next_button %}
+
+
+<div id="recap">
+
+</div>
+
+{% endblock %}

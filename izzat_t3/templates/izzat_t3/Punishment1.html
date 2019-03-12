@@ -1,0 +1,206 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Choose to Punish: Round {{ player.round_number   }}
+{% endblock %}
+
+{% block style %}
+
+    <style>
+h1 {
+    color: black;
+    font-size: 200%;
+	padding-left: 0px;
+	position: absolute;
+	top: 20px}
+h2{
+    color: black;
+    font-size: 150%;
+	padding-left: 0px;}
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!DOCTYPE html>
+<html>
+<body>
+
+<style>
+    .otree-body {
+    width:1000px;
+	padding: 0 0 0 0px;
+	color: black;
+		}
+
+    #bg-cont{
+      background: url("/static/izzat_t3/results_1.png") no-repeat center top;
+  		background-size: contain;
+      position: relative;
+      height: 540px;
+
+    }
+
+
+	.form-group {
+	position: relative;
+    top: 40px;
+	left: 100px;
+	}
+
+	.otree-btn-next{
+
+	position: relative;
+    top: 400px;
+	left: 100px
+    }
+
+	#infoforplayers{
+	position: relative;
+	top:530px;
+	left: 100px;
+	}
+
+	#recap{
+	background: url("/static/izzat_t3/footer.png") no-repeat center;
+	background-size: contain;
+      position: absolute;
+	  top: 1100px;
+      width:900px;
+	  height: 500px;
+	  }
+
+    #playerremaining1{
+     position: absolute;
+	 left: 75px;
+     top: 225px;
+
+    }
+
+    #playerremaining2{
+    position: absolute;
+	left: 150px;
+    top: 455px;
+
+    }
+
+    #playerremaining3{
+      position: absolute;
+      left: 800px;
+	  top: 465px;
+    }
+
+    #playerremaining4{
+      position: absolute;
+      left: 845px;
+	  top: 245px;
+
+    }
+
+    #playerremaining5{
+      position: absolute;
+      left: 493px;
+	  top: 87px;
+
+    }
+
+	  #playercontribution1{
+      position: absolute;
+      left: 400px;
+    top: 240px;
+	}
+
+    #playercontribution2{
+      position: absolute;
+      left: 440px;
+	top: 305px;
+	}
+
+    #playercontribution3{
+      position: absolute;
+      left: 540px;
+	  top: 310px;
+    }
+
+    #playercontribution4{
+      position: absolute;
+      left: 555px;
+	  top: 250px;
+
+    }
+
+    #playercontribution5{
+      position: absolute;
+      left: 475px;
+	  top: 195px;
+      }
+
+    #PunishTable{
+      position: absolute;
+      left: 525px;
+	  top: 700px;
+      }
+
+</style>
+
+    <div id="bg-cont">
+
+	<div id="infoforplayers">
+		The sum of individual contributions was {{ group.total_contribution }}.
+		<p> The individual share distributed to each participant in the group will be {{ group.individual_share}}.
+  </div>
+
+  <div id="playerremaining{{player.id_in_group}}">
+    {{ player.remaining  }} Remaining
+  </div>
+
+
+  {% for p in player.get_others_in_group %}
+  <div id="playerremaining{{p.id_in_group}}">
+    {{ p.remaining  }} Remaining
+  </div>
+  {% endfor %}
+
+
+
+
+
+ <div id="playercontribution{{player.id_in_group}}">
+    {{ player.contribution  }}
+  </div>
+
+
+  {% for p in player.get_others_in_group %}
+  <div id="playercontribution{{p.id_in_group}}">
+    {{ p.contribution }}
+  </div>
+  {% endfor %}
+
+</div>
+
+    <p>
+
+    </p>
+
+    <div id="PunishTable">
+    Pun 2
+    <input type="number" name="pun_2" value="0" step="1" min="0" max="10.00" id="id_pun_2" class="form-control">
+
+   Pun 3
+    <input type="number" name="pun_3" value="0" step="1" min="0" max="10.00" id="id_pun_3" class="form-control">
+
+    Pun 4
+    <input type="number" name="pun_4" value="0" step="1" min="0" max="10.00" id="id_pun_4" class="form-control">
+
+    </div>
+    {% next_button %}
+
+
+
+
+
+{% endblock %}

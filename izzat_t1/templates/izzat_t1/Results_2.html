@@ -1,0 +1,205 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+<!DOCTYPE html>
+<html>
+<h1> Updated Results Round {{ player.round_number}} </h1>
+
+<head>
+
+<img src="/static/izzat_t3/header_3.png" position: absolute;
+	top:0px;
+	left:195px; width="952" height="96">
+
+<h2> You are <span class="text-danger"> Player {{player.id_in_group}} </span> </h2>
+
+<style>
+h1 {
+    color: black;
+    font-size: 200%;
+	padding-left: 0px;
+	position: absolute;
+	top: 20px}
+h2{
+    color: black;
+    font-size: 150%;
+	padding-left: 0px;}
+
+</style>
+
+</head>
+
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+
+<style>
+    .otree-body {
+    width:1000px;
+	padding: 0 0 0 0px;
+	color: black;
+	}
+
+    #bg-cont{
+      background: url("/static/izzat_t3/results_2.png") no-repeat center top;
+  		background-size: contain;
+      position: relative;
+      height: 540px;
+
+    }
+
+
+	.form-group {
+	position: relative;
+    top: 0px;
+	left: 100px;
+	}
+
+	.otree-btn-next{
+
+	position: relative;
+    top: 0px;
+	left: 100px
+    }
+
+	#recap{
+	background: url("/static/izzat_t3/footer.png") no-repeat center bottom;
+	background-size: contain;
+      position: relative;
+	  bottom: 0px;
+      height: 500px;
+	  }
+
+
+    #playerremaining1{
+     position: absolute;
+	 left: 50px;
+     top: 205px;
+
+    }
+
+    #playerremaining2{
+    position: absolute;
+	left: 150px;
+    top: 440px;
+
+    }
+
+    #playerremaining3{
+      position: absolute;
+      left: 790px;
+	  top: 430px;
+    }
+
+    #playerremaining4{
+      position: absolute;
+      left: 860px;
+	  top: 235px;
+
+    }
+
+    #playerremaining5{
+      position: absolute;
+      left: 490px;
+	  top: 80px;
+
+    }
+
+	#playershare1{
+	position: absolute;
+      top: 170px;
+      left: 230px;
+	  font-size: 0.8em;
+	  font-weight: bold;
+    }
+
+	#playershare2{
+	position: absolute;
+      top: 370px;
+      left: 300px;
+	  font-size: 0.8em;
+	  font-weight: bold;
+    }
+
+	#playershare3{
+	position: absolute;
+      top: 342px;
+      left: 607px;
+	  font-size: 0.8em;
+	  font-weight: bold;
+    }
+
+	#playershare4{
+	position: absolute;
+      top: 185px;
+      left: 650px;
+	  font-size: 0.8em;
+	  font-weight: bold;
+    }
+
+	#playershare5{
+	position: absolute;
+      top: 160px;
+      left: 510px;
+	  font-size: 0.8em;
+	  font-weight: bold;
+    }
+
+</style>
+
+<div id="bg-cont">
+
+	<div id="playerremaining{{player.id_in_group}}">
+    {{ player.payoff  }} <p> Rupees </p>
+  </div>
+
+  {% for p in player.get_others_in_group %}
+  <div id="playerremaining{{p.id_in_group}}">
+    {{ p.payoff  }} <p> Rupees </p>
+  </div>
+  {% endfor %}
+
+    <div id="playerremaining5">
+
+  </div>
+
+  <div id="playershare{{player.id_in_group}}">
+
+  </div>
+
+  {% for p in player.get_others_in_group %}
+  <div id="playershare{{p.id_in_group}}">
+
+  </div>
+  {% endfor %}
+
+<div id="infoforplayers">
+
+    Your punishment from the group was {% if player.id_in_group == 1 %}{{ group.punr_1 }} {% elif player.id_in_group == 2 %}{{ group.punr_2 }}{% elif player.id_in_group == 3 %}{{ group.punr_3 }}{% elif player.id_in_group == 4 %}{{ group.punr_4 }} {% endif %}.
+    <p>You sent {{ player.punishment_sent }} as punishment. This cost you {{ player.punishment_cost_self  }}, and has been deducted from your earnings for this round.</p>
+    <p>The individual share distributed to each participant in the group will be {{ group.individual_share}}.</p>
+  </div>
+
+</div>
+
+<body>
+
+
+</body>
+</html>
+
+<br>
+
+{% next_button %}
+
+<div id="recap">
+
+</div>
+
+{% endblock %}

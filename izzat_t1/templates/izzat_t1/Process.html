@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Round {{ player.round_number }}
+{% endblock %}
+
+{% block content %}
+  <p>On the next screen you will see the group's earnings from this round.</p>
+
+    <p>Remember, you are <b>Player {{ player.id_in_group }}</b>.</p>
+
+
+
+    {% next_button %}
+
+
+
+
+
+{% endblock %}
