@@ -9,12 +9,14 @@
 
     Write your essay below.
 
-    {% formfield player.essay_text %}
-
-    {% next_button %}
+{#    {% formfield player.essay_text %}#}
 
 
-       <b>The importance of reading.</b>
+
+
+<p></p>
+<p>
+    <b>The importance of reading.</b>
 
     <p> Reading is prescribed as a hobby to us from a very young age, by people all around us. </p>
     <p> Write approximately 300 words about how important reading is to you, and in general. </p>
@@ -22,7 +24,23 @@
     <p>You can use anecdotes or instances from your life and that of those around you to discuss how reading is beneficial. </p>
     <p>If you think there are comparable hobbies, please feel free to mention those as well.  </p>
 
+    <div class="form-group required">
 
+            <label class="col-form-label" for="id_essay_text">Write in the box below:</label>
+            <div class="controls  field-essay_text">
+                <textarea name="essay_text"
+  cols ="20" rows="50" required id="id_essay_text" class="form-control">
+</textarea>
+
+
+
+            </div>
+
+
+</div>
+
+
+    {% next_button %}
 {% endblock %}
 
 {% block style %}
@@ -35,3 +53,20 @@
 {% endblock %}
 
 
+{% block scripts %}
+{#<script>#}
+{##}
+{#    document.getElementById('.otree-btn-next').disabled = false;#}
+{#            setTimeout(function(){#}
+{#                  document.getElementById('.otree-btn-next').disabled = true;}, 50);#}
+{##}
+{##}
+{#setTimeout(#}
+{#    function () {#}
+{#        alert("Time has run out. Please make your decision.");#}
+{#    },#}
+{#    3*10 // 600 seconds#}
+{#);#}
+{##}
+{#</script>#}
+{%  endblock %}

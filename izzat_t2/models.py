@@ -14,7 +14,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'izzat_t2'
     players_per_group = 4
-    num_rounds = 4
+    num_rounds = 12
 
     endowment = c(10)
     multiplier = 2

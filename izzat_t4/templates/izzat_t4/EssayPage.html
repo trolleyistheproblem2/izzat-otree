@@ -9,18 +9,38 @@
 
     Write your essay below.
 
-    {% formfield player.essay_text %}
+{#    {% formfield player.essay_text %}#}
 
-    {% next_button %}
 
+
+
+<p></p>
 <b>Concept of honour as taught by your parents</b>
 
     <p> Indians across cultures, religions, languages are united by the concept of honour (in English), izzat (in Urdu), maan (in Hindi). </p>
-    <p> Write approximately 300 words about this concept on the next page. </p>
+    <p> Write approximately 300 words about this concept in the box below. </p>
     <p> Feel free to talk about what the idea of honour means to you, and how it has been taught to you by your family, especially your mother and father.</p>
     <p>You can give examples when you thought you, or somebody you know acted honourably. This could even be a public figure.</p>
     <p> We realise that honour could have a different conception for you, so do not be hesitant to write what it means specifically to you. </p>
 
+
+    <div class="form-group required">
+
+            <label class="col-form-label" for="id_essay_text">Write in the box below:</label>
+            <div class="controls  field-essay_text">
+                <textarea name="essay_text"
+  cols ="20" rows="50" required id="id_essay_text" class="form-control">
+</textarea>
+
+
+
+            </div>
+
+
+</div>
+
+
+    {% next_button %}
 {% endblock %}
 
 {% block style %}
@@ -34,19 +54,19 @@
 
 
 {% block scripts %}
-<script>
-
-    document.getElementById('.otree-btn-next').disabled = false;
-            setTimeout(function(){
-                  document.getElementById('.otree-btn-next').disabled = true;}, 50);
-
-
-setTimeout(
-    function () {
-        alert("Time has run out. Please make your decision.");
-    },
-    3*10 // 600 seconds
-);
-
-</script>
+{#<script>#}
+{##}
+{#    document.getElementById('.otree-btn-next').disabled = false;#}
+{#            setTimeout(function(){#}
+{#                  document.getElementById('.otree-btn-next').disabled = true;}, 50);#}
+{##}
+{##}
+{#setTimeout(#}
+{#    function () {#}
+{#        alert("Time has run out. Please make your decision.");#}
+{#    },#}
+{#    3*10 // 600 seconds#}
+{#);#}
+{##}
+{#</script>#}
 {%  endblock %}

@@ -14,7 +14,7 @@ class EssayPage(Page):
     form_model = 'player'
     form_fields = ['essay_text']
 
-    timeout_seconds = 20
+    timeout_seconds = 600
 
 class Contribute(Page):
     form_model = 'player'

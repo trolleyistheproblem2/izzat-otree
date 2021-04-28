@@ -181,9 +181,9 @@ h2{
 
 <div id="infoforplayers">
 
-    Your punishment from the group was {% if player.id_in_group == 1 %}{{ group.punr_1 }} {% elif player.id_in_group == 2 %}{{ group.punr_2 }}{% elif player.id_in_group == 3 %}{{ group.punr_3 }}{% elif player.id_in_group == 4 %}{{ group.punr_4 }} {% endif %}.
-    <p>You sent {{ player.punishment_sent }} as punishment. This cost you {{ player.punishment_cost_self  }}, and has been deducted from your earnings for this round.</p>
-    <p>The individual share distributed to each participant in the group will be {{ group.individual_share}}.</p>
+    Your total punishment from others in the group was {% if player.id_in_group == 1 %}{{ group.punr_1 }} {% elif player.id_in_group == 2 %}{{ group.punr_2 }}{% elif player.id_in_group == 3 %}{{ group.punr_3 }}{% elif player.id_in_group == 4 %}{{ group.punr_4 }} {% endif %}.
+    <p>The total punishment that you inflicted on others was {{ player.punishment_sent }}. This cost you {{ player.punishment_cost_self  }}, and has been deducted from your earnings for this round.
+    The individual share distributed to each participant in the group will be {{ group.individual_share}}.</p>
   </div>
 
 </div>

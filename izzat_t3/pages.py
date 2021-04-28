@@ -14,7 +14,7 @@ class EssayPage(Page):
     form_model = 'player'
     form_fields = ['essay_text']
 
-    timeout_seconds = 20
+    timeout_seconds = 600
 
 class Contribute(Page):
     form_model = 'player'
@@ -56,6 +56,12 @@ class Punishment1(Page):
     def before_next_page(self):
         self.player.set_player_sent_punishment()
 
+    def error_message(self, values):
+        print('values is', values)
+        if values["pun_2"] + values["pun_3"] + values["pun_4"] > Constants.endowment:
+            return 'You cannot inflict punishment greater than your round endowment!'
+
+
 class Punishment2(Page):
     form_model = 'player'
     form_fields = ['pun_1','pun_3','pun_4']
@@ -74,6 +80,11 @@ class Punishment2(Page):
 
     def before_next_page(self):
         self.player.set_player_sent_punishment()
+
+    def error_message(self, values):
+        print('values is', values)
+        if values["pun_1"] + values["pun_3"] + values["pun_4"] > Constants.endowment:
+            return 'You cannot inflict punishment greater than your round endowment!'
 
 class Punishment3(Page):
     form_model = 'player'
@@ -94,6 +105,11 @@ class Punishment3(Page):
     def before_next_page(self):
         self.player.set_player_sent_punishment()
 
+    def error_message(self, values):
+        print('values is', values)
+        if values["pun_2"] + values["pun_1"] + values["pun_4"] > Constants.endowment:
+            return 'You cannot inflict punishment greater than your round endowment!'
+
 class Punishment4(Page):
     form_model = 'player'
     form_fields = ['pun_1','pun_2','pun_3']
@@ -107,11 +123,17 @@ class Punishment4(Page):
         if self.round_number > 3:
             if self.player.id_in_group == 4:
                 return True
+            else: return False
         else:
             return False
 
     def before_next_page(self):
         self.player.set_player_sent_punishment()
+
+    def error_message(self, values):
+        print('values is', values)
+        if values["pun_2"] + values["pun_3"] + values["pun_1"] > Constants.endowment:
+            return 'You cannot inflict punishment greater than your round endowment!'
 
 class ResultsWaitPage(WaitPage):
 

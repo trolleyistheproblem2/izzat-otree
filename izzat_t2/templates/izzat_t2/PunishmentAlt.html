@@ -28,6 +28,7 @@ h2{
 
     <!DOCTYPE html>
 <html>
+    <head><h2> You are <span class="text-danger"> Player {{player.id_in_group}} </span> </h2></head>
 <body>
 
 <style>
@@ -147,7 +148,7 @@ h2{
 
 	<div id="infoforplayers">
 		The sum of individual contributions was {{ group.total_contribution }}.
-		<p> The individual share distributed to each participant in the group will be {{ group.individual_share}}.
+
   </div>
 
   <div id="playerremaining{{player.id_in_group}}">

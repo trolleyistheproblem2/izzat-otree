@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+
+
+<p>Welcome to the Centre for Experimental Social Sciences. You are invited to play a game for 30 minutes. All instructions required for playing the game will be provided on your screens. </p>
+
+    <p>Before we begin the game, we will ask you to enter your subject ID. This is the number written on the chit you picked out of the bag, before entering the room. </p>
+
+{% formfields %}
+
+    {% next_button %}
+{% endblock %}
+
+

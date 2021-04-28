@@ -12,23 +12,41 @@ SESSION_CONFIG_DEFAULTS = {
 }
 
 SESSION_CONFIGS = [
+{
+       'name': 'izzat_t1',
+       'display_name': "T1",
+       'num_demo_participants': 4,
+       'app_sequence': ['izzat_enter','izzat_t1','izzat_survey'],
+    },
     {
        'name': 'izzat_t2',
        'display_name': "T2",
        'num_demo_participants': 4,
-       'app_sequence': ['izzat_t2'],
+       'app_sequence': ['izzat_enter','izzat_t2','izzat_survey'],
     },
     {
        'name': 'izzat_t3',
        'display_name': "T3",
        'num_demo_participants': 4,
-       'app_sequence': ['izzat_t3'],
+       'app_sequence': ['izzat_enter','izzat_t3','izzat_survey'],
     },
 {
        'name': 'izzat_t4',
        'display_name': "T4",
        'num_demo_participants': 4,
-       'app_sequence': ['izzat_t4'],
+       'app_sequence': ['izzat_enter','izzat_t4','izzat_survey'],
+    },
+{
+       'name': 'izzat_survey',
+       'display_name': "izzat_survey",
+       'num_demo_participants': 2,
+       'app_sequence': ['izzat_survey'],
+    },
+{
+       'name': 'izzat_enter',
+       'display_name': "izzat_enter",
+       'num_demo_participants': 2,
+       'app_sequence': ['izzat_enter'],
     },
 ]
 

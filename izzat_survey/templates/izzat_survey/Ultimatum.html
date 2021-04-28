@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Questions
+{% endblock %}
+
+{% block content %}
+
+    <p>Suppose you are paired with another person for a game. In the game, one of you is the receiver and one of you is the sender. The sender is given INR 50 and can send any amount from INR 0 to INR 50 to the receiver. If the receiver does not accept this amount, neither the sender, nor the receiver get any money. If the receiver accepts, the sender gets the balance amount, and the receiver gets what was sent by the sender.</p>
+
+    <p>Suppose you are paired with a person, whose personal information is given below. What would be the minimum amount the sender has to send, for your to accept? </p>
+
+     <table border = 2 cellpadding="10" class="PartnerTable">
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+
+  </tr>
+       <tr>
+    <td>Religion</td>
+    <td>{{ partner_religion }}</td>
+  </tr>
+  <tr>
+    <td>Year of Study</td>
+    <td>Post Graduate 2</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>25</td>
+  </tr>
+   </table>
+
+
+    {% formfields %}
+    {% next_button %}
+{% endblock %}
+
+

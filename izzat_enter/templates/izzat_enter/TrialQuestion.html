@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Trial Question
+{% endblock %}
+
+{% block content %}
+
+
+    <p>Suppose the contributions from your group are:</p>
+
+    <p>Player 1: 4 rupees</p>
+        <p>Player 2: 6 rupees</p>
+        <p>Player 3: 1 rupees</p>
+        <p>Player 4: 3 rupees</p>
+
+
+
+    {% formfields %}
+    {% next_button %}
+{% endblock %}
+
+

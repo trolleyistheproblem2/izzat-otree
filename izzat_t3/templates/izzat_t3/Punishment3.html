@@ -28,6 +28,7 @@ h2{
 
     <!DOCTYPE html>
 <html>
+    <head><h2> You are <span class="text-danger"> Player {{player.id_in_group}} </span> </h2></head>
 <body>
 
 <style>
@@ -142,7 +143,7 @@ h2{
     #PunishTable{
       position: absolute;
       left: 525px;
-	  top: 700px;
+	  top: 750px;
       }
 
 </style>
@@ -151,7 +152,7 @@ h2{
 
 	<div id="infoforplayers">
 		The sum of individual contributions was {{ group.total_contribution }}.
-		<p> The individual share distributed to each participant in the group will be {{ group.individual_share}}.
+
   </div>
 
   <div id="playerremaining{{player.id_in_group}}">
@@ -187,14 +188,14 @@ h2{
     </p>
 
     <div id="PunishTable">
-    Pun 1
-    <input type="number" name="pun_1" value="0" step="1" min="0" max="10.00" id="id_pun_1" class="form-control">
+    Punishing Player 1 by how much?
+    <input type="number" name="pun_1" value="0" step="1" min="0" max="10.00" id="id_pun_1" class="form-control"><p></p>
 
-    Pun 2
-    <input type="number" name="pun_2" value="0" step="1" min="0" max="10.00" id="id_pun_2" class="form-control">
+    Punishing Player 2 by how much?
+    <input type="number" name="pun_2" value="0" step="1" min="0" max="10.00" id="id_pun_2" class="form-control"><p></p>
 
-  Pun 4
-    <input type="number" name="pun_4" value="0" step="1" min="0" max="10.00" id="id_pun_4" class="form-control">
+  Punishing Player 4 by how much?
+    <input type="number" name="pun_4" value="0" step="1" min="0" max="10.00" id="id_pun_4" class="form-control"><p></p>
 
     </div>
     {% next_button %}

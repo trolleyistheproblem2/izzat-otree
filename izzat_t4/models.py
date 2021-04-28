@@ -14,7 +14,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'izzat_t4'
     players_per_group = 4
-    num_rounds = 4
+    num_rounds = 12
 
     endowment = c(10)
     multiplier = 2
@@ -75,6 +75,7 @@ class Player(BasePlayer):
 
     punishment_sent = models.CurrencyField(initial=0)
     punishment_cost_self = models.CurrencyField(initial=0)
+
 
     def set_player_sent_punishment(self):
         print(self.pun_1,self.pun_2,self.pun_3,self.pun_4)

@@ -2,13 +2,13 @@
 {% load otree static %}
 
 {% block title %}
-    Thank you!
+    Final Results
 {% endblock %}
 
 {% block content %}
 
 
-    <p>Please click on the next button now.</p>
+    <p>Total Payoff : {{ participant.payoff }}</p>
     {% next_button %}
 {% endblock %}
 
